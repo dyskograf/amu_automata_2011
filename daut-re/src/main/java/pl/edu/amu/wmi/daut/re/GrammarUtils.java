@@ -18,9 +18,13 @@ public class GrammarUtils {
         for (GrammarRule rule : rules) {
             if (rule.getArity() > 2
                     || rule.getArity() == 0
-                    || rule.getRhsSecondSymbol().isTerminalSymbol()
+                    || ((rule.getRhsSecondSymbol().isTerminalSymbol())
+                            && (rule.getArity() == 2))
+                    || (!(rule.getRhsFirstSymbol().isTerminalSymbol())
+                            && (rule.getArity() == 1))
                     || (rule.getRhsFirstSymbol().isTerminalSymbol()
-                            && !(rule.getRhsSecondSymbol().isTerminalSymbol()))) {
+                            && !(rule.getRhsSecondSymbol().isTerminalSymbol())
+                            && rule.getArity() == 2)) {
                 return false;
             }
         }
