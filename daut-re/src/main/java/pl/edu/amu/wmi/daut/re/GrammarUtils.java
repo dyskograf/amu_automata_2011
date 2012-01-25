@@ -11,7 +11,7 @@ public class GrammarUtils {
      * Metoda sprawdzająca, czy podana gramatyka jest w postaci normalnej
      * Chomsky'ego.
      */
-    public boolean isChomsky(Grammar g) {
+    public static boolean isChomsky(Grammar g) {
 
         List<GrammarRule> rules = g.allRules();
 
